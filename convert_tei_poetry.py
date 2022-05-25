@@ -13,8 +13,21 @@ DATA_DIR = ".\\source_data\\"
 GR_SRC = DATA_DIR + BASE
 
 
-   
-
+def load_english(path):
+    lines = []
+    with open(path, 'r', encoding="UTF-8") as f:
+        for l in f:
+            line = l.strip()
+            if not line:
+                continue
+            if len(line) < 30:
+                lines[-1] += line
+            else:
+                lines.append(line)
+    return lines
+    
+en_data = load_english(DATA_DIR + 'en_book1.txt')
+print(len(en_data))
 
 def process_file(xml):
     chapter = '0'
@@ -58,17 +71,7 @@ HEADER = """<!DOCTYPE html>
 FOOTER ="""</div>
 </body>
 <style>
-    .wrapper {
-        display: flex;
-        margin: 4px;
-
-    }
-
-    .gr {
-        flex:1;
-        margin-right:2px;
-    }
-    .en { flex: 0;}
+    
     .en-data { display: none; }
     .marker {margin-right: 0.5em;}
     .number {margin-right: 0.25em;}
@@ -133,11 +136,15 @@ FOOTER ="""</div>
 with open('.\\docs\\index.html', 'w', encoding="UTF-8") as f:
     print(HEADER, file=f)
     print("<h1>Argonautica, Book 1</h1>", file=f)
-    print('<div class="poetry-wrapper alpheios-enabled" lang="grc">', file=f)
+    print('<div class="poetry-wrapper">', file=f)
+    i = 0
     for lb in GRFILE.findall('//lb'):
-        print(f'<div class="poetry-line">{(lb.tail or "")}</div>', file=f)
-    print("</div>", file=f)
+        print(f'<div class="poetry-line"><span class="alpheios-enabled" lang="grc">{(lb.tail or "")}</span><span><span class="marker">&#8853;</span><span class="en-data"><br />{en_data[i]}</span></span></div>', file=f)
+        print(f'', file=f)
+        i += 1
         
+    print("</div>", file=f)
+    print(i, ' lines')    
         
     print(FOOTER, file=f)
 
