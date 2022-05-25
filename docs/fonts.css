@@ -1,0 +1,33 @@
+@font-face {
+  font-family: NewAthenaUnicode;
+  src: url(https://amindforlanguage.com/argonautica/newathu5_5.woff);
+}
+@font-face {
+  font-family: NewAthenaUnicode;
+  font-style: italic;
+  src: url(https://amindforlanguage.com/argonautica/newathuItalic5_5.woff);
+}
+@font-face {
+    font-family: NewAthenaUnicode;
+    font-style: bold;
+    src: url(https://amindforlanguage.com/argonautica/newathuBold5_5.woff);
+}
+
+body {
+    font-family: NewAthenaUnicode, serif;
+}
+
+h1 {
+	margin: 8px;
+}
+
+.poetry-wrapper {
+	margin-left:auto;
+	margin-right: auto;
+	text-align: left;
+	max-width: fit-content;
+}
+
+.poetry-line {
+	margin: 2px;
+}
