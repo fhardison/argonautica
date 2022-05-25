@@ -1,5 +1,3 @@
-# anabasis diglot
-
 An version of Argonautica with Alpheios. 
 
 
