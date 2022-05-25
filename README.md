@@ -6,7 +6,7 @@ Click the "+" to show the English.
 
 
 * Greek <http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0227>
-* English < https://www.gutenberg.org/cache/epub/64235/pg64235.txt> from Project Gutenberg. 
+* English <https://www.gutenberg.org/cache/epub/64235/pg64235.txt> from Project Gutenberg. 
 
 Both of which are released under a [Creative Commons Attribution-ShareAlike 3.0 United States](http://creativecommons.org/licenses/by-sa/3.0/us/) License. 
 
